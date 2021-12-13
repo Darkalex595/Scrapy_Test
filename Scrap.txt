@@ -1,0 +1,5 @@
+libros = response.css("article.product_pod") //Regresa todos los contenedores con los libros
+titulo = libros.css("h3 a::attr(title)").getall() //Regresa los titulos de los libros
+precios = libros.css("div.product_price p.price_color::text").getall() // Regresa los precios de los libros
+stocks = libros.css("div.product_price p.instock.availability::text").getall() //Regresa si el libro esta en stock o no
+image = libros.css("div.image_container a img.thumbnail::attr(src)").getall() //Regresa las imagenes 

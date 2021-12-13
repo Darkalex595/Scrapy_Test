@@ -1,6 +1,8 @@
 import scrapy
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
 
-
+#Clase de spider
 class BooksSpider(scrapy.Spider):
     name = "books"
     start_urls = [
@@ -59,6 +61,15 @@ class BooksSpider(scrapy.Spider):
                 'Reviews' : reviews
             }
             
-            
-            
+
+process = CrawlerProcess({
+    'FEED_FORMAT': 'json',
+    'FEED_URI': 'file: C:/Users/futbo/Documents/Clases/Reto/Scrapy_Test/bookSpider/books/books.json'
+})
+
+
+#Funcion para ejecutar el spider desde el script
+def execute():
     
+    process.crawl(BooksSpider)
+    process.start()

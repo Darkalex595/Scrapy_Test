@@ -1,7 +1,8 @@
 import json, sys
 
+#Funcion para crear el comando insert para ingresar la información a postgres
 def createInsert():
-    with open('C:/Users/futbo/Documents/Clases/Reto/Scrapy_Test/books/books/books.json') as json_data:
+    with open('C:/Users/futbo/Documents/Clases/Reto/Scrapy_Test/bookSpider/books/books.json') as json_data:
             lista_libros = json.load(json_data)
             
     if type(lista_libros) == list:

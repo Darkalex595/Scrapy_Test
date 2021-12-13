@@ -36,9 +36,6 @@ class BooksSpider(scrapy.Spider):
         
             cont = response.css("div.container-fluid.page")
             titulo = cont.css("div.page_inner div.content div#content_inner article.product_page div.row div.col-sm-6.product_main h1::text").get()
-            precio = cont.css("div.page_inner div.content div#content_inner article.product_page div.row div.col-sm-6.product_main p.price_color::text").get()
-            stock = cont.css("div.page_inner div.content div#content_inner article.product_page div.row div.col-sm-6.product_main p.instock.availability::text").getall()
-            stock = stock[1]
             categoria = cont.css("div.page_inner ul.breadcrumb li a::text").getall()
             categoria = categoria[2]
             cover = cont.css("div.page_inner div.content div#content_inner article.product_page div.row div.col-sm-6 div.carousel div.thumbnail div.carousel-inner div.item.active img::attr(src)").get()
@@ -52,8 +49,6 @@ class BooksSpider(scrapy.Spider):
             
             yield{
                 'Titulo' : titulo,
-                'Precio' : precio,
-                'Stock' : stock,
                 'Categoria' : categoria,
                 'Cover' : cover,
                 'UPC' : upc,

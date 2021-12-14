@@ -1,7 +1,2 @@
-Dependencias necesarias:
-
-1. Libreria SCRAPY de python: Libreria necesaria para la creación de las herramientas spiders para poder recolectar la información. 
-Su instalacion es a través del comando: pip install Scrapy
-
-2. Libreria PSYCOPG2 de python: Libreria que funciona de middleware para la conexión e interacción de programas de python con las bases de datos creadas en psotgres.
-Su instalacion es a través del comando: pip install psycopg2
+Scrapy==2.5.1
+psycopg2==2.9.2
